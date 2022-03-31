@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resource-agent name="disk">
+	<version>1.0</version>
+	<longdesc lang="en">This wizard help you to setup an monitor on drbd connection state
+	</longdesc>
+	<longdesc lang="zh_CN">drbd链接监控</longdesc>
+	<shortdesc lang="en">Monitor of drbd cstate
+	</shortdesc>
+	<shortdesc lang="zh_CN">drbd链接监控</shortdesc>
+	<parameters>
+		<parameter name="drbd_name" unique="yes" required="yes" config="normal"
+		           critical="yes">
+			<longdesc lang="en">The name of drbd that will be monitored, for example: drbd0</longdesc>
+			<longdesc lang="zh_CN">待监控的drbd资源名,比如drbd0</longdesc>
+			<shortdesc lang="en">drbd_name</shortdesc>
+			<shortdesc lang="zh_CN">drbd名</shortdesc>
+			<content type="string" default="" validate="shell_options_validate"/>
+		</parameter>
+
+		<parameter name="check_status" unique="no" required="no" config="original">
+			<longdesc lang="en">Check Status of resource</longdesc>
+			<longdesc lang="zh_CN">检查资源状态</longdesc>
+			<shortdesc lang="en">Check Status</shortdesc>
+			<shortdesc lang="zh_CN">检查资源状态</shortdesc>
+			<content type="boolean" default="no" />
+		</parameter>
+
+		<parameter name="check_env" unique="no" required="no" config="original" showlevel="1">
+			<longdesc lang="en">When resources are in a state of errors, and resources to support the environment inspection, check the running environment resources</longdesc>
+			<longdesc lang="zh_CN">当资源处于错误状态,并且资源支持环境检测时,检查资源运行环境</longdesc>
+			<shortdesc lang="en">Auto Reset Error by Env</shortdesc>
+			<shortdesc lang="zh_CN">环境恢复时重置错误</shortdesc>
+			<content type="boolean" default="no" />
+		</parameter>
+		<parameter name="is_critical" unique="no" required="no" config="original" showlevel="1">
+			<longdesc lang="en">is the resource critical or not</longdesc>
+			<longdesc lang="zh_CN">资源是否是关键资源</longdesc>
+			<shortdesc lang="en">Critical Resource</shortdesc>
+			<shortdesc lang="zh_CN">关键资源</shortdesc>
+			<content type="boolean" default="no" />
+		</parameter>
+	</parameters>
+</resource-agent>
